@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F18DDBD7-F1B0-47EC-A53A-007B0796D1FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TNTVehicleSystem</RootNamespace>
+    <AssemblyName>TNTVehicleSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CommandVs.cs" />
+    <Compile Include="Commands\CommandMv.cs" />
+    <Compile Include="Main\Plugin.cs" />
+    <Compile Include="Config\Configurations.cs" />
+    <Compile Include="Managers\VehicleManagerUi.cs" />
+    <Compile Include="Managers\DataBaseManager.cs" />
+    <Compile Include="Managers\VehicleUtility.cs" />
+    <Compile Include="Models\VehicleInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\SwingPatch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="bin\Debug\0Harmony.dll" />
+    <Analyzer Include="bin\Debug\Assembly-CSharp.dll" />
+    <Analyzer Include="bin\Debug\AstarPathfindingProject.dll" />
+    <Analyzer Include="bin\Debug\com.rlabrecque.steamworks.net.dll" />
+    <Analyzer Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Analyzer Include="bin\Debug\Rocket.API.dll" />
+    <Analyzer Include="bin\Debug\Rocket.Core.dll" />
+    <Analyzer Include="bin\Debug\Rocket.Unturned.dll" />
+    <Analyzer Include="bin\Debug\SDG.Glazier.Runtime.dll" />
+    <Analyzer Include="bin\Debug\SDG.HostBans.Runtime.dll" />
+    <Analyzer Include="bin\Debug\SDG.NetPak.Runtime.dll" />
+    <Analyzer Include="bin\Debug\SDG.NetTransport.dll" />
+    <Analyzer Include="bin\Debug\TNTPlus.dll" />
+    <Analyzer Include="bin\Debug\UnityEngine.AnimationModule.dll" />
+    <Analyzer Include="bin\Debug\UnityEngine.CoreModule.dll" />
+    <Analyzer Include="bin\Debug\UnityEngine.dll" />
+    <Analyzer Include="bin\Debug\UnityEngine.PhysicsModule.dll" />
+    <Analyzer Include="bin\Debug\UnityEngine.ProfilerModule.dll" />
+    <Analyzer Include="bin\Debug\UnityEngine.UI.dll" />
+    <Analyzer Include="bin\Debug\UnityEngine.VehiclesModule.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="AstarPathfindingProject, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\AstarPathfindingProject.dll</HintPath>
+    </Reference>
+    <Reference Include="com.rlabrecque.steamworks.net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\com.rlabrecque.steamworks.net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.API, Version=4.9.3.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Rocket.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.Core, Version=4.9.3.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Rocket.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Rocket.Unturned, Version=4.9.3.18, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Rocket.Unturned.dll</HintPath>
+    </Reference>
+    <Reference Include="SDG.HostBans.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\SDG.HostBans.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="SDG.NetTransport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\SDG.NetTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="TNTPlus, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\TNTPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnturnedDat">
+      <HintPath>..\..\Libs\UnturnedDat.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
