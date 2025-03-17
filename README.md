@@ -44,7 +44,7 @@ To use this plugin, you need:
 ## 📌
 This plugin provides convenient vehicle management, key support, security settings, and a variety of useful commands. If you have any questions or suggestions, create an issue on GitHub! 🚀
 
-##Ru
+##🇷🇺
 
 ## 🔧 Требования
 Для работы плагина необходимы:
