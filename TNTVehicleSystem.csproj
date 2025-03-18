@@ -38,7 +38,7 @@
     <Compile Include="Config\Configurations.cs" />
     <Compile Include="Managers\VehicleManagerUi.cs" />
     <Compile Include="Managers\DataBaseManager.cs" />
-    <Compile Include="Managers\VehicleUtility.cs" />
+    <Compile Include="Utility\VehicleUtility.cs" />
     <Compile Include="Models\VehicleInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\SwingPatch.cs" />
