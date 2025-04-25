@@ -102,21 +102,20 @@ namespace TNTVehicleSystem.Managers
             {
                 return;
             }
-            string guid = asset.GUID.ToString();
-            string vehicleName = asset.vehicleName ?? "Неизвестная машина";
-
-            if (VehicleUtility.IsExcludedVehicles(guid))
+            if (VehicleUtility.IsExcludedVehicles(asset))
             {
                 return;
             }
+
+            string guid = asset.GUID.ToString();
+            string vehicleName = asset.vehicleName ?? "Неизвестная машина";
 
             if (VehicleUtility.CountNumbers(vehicle) == 0)
             {
                 MessageManager.Send(Uplayer, Main.Plugin.Instance.Translate("install_license_plates_on_your_vehicle"), EMessageType.Notification);
             }
+
             VehicleUtility.UpdateNumbers(vehicle);
-            //VehicleManager.getVehicle(vehicle.instanceID).asset.vehicleName
-            //ushort legacyId = asset.id;
 
             EffectManager.sendUIEffect(7431, 7431, Uplayer.Player.channel.GetOwnerTransportConnection(), true);
 
@@ -124,6 +123,7 @@ namespace TNTVehicleSystem.Managers
             {
                 return;
             }
+
             vehicleInfo.Add(new VehicleInfo
             {
                 Guid = guid,
@@ -136,7 +136,6 @@ namespace TNTVehicleSystem.Managers
             });
 
             CSteamID cSteamID = CSteamID.Nil;
-
             VehicleManager.ServerSetVehicleLock(vehicle, cSteamID, cSteamID, true);
             MessageManager.Send(Uplayer, Main.Plugin.Instance.Translate("car_registered_with_license_plate", GetVehicle(vehicle).RegistrationNumber), EMessageType.Succes);
             SaveDataBase();

@@ -176,7 +176,7 @@ namespace TNTVehicleSystem.Managers
             return null;
         }
 
-        public static bool IsExcludedVehicles(string guid)
+        /*public static bool IsExcludedVehicles(string guid)
         {
             foreach (var item in Plugin.Instance.Configuration.Instance.ExcludedVehicles)
             {
@@ -186,6 +186,58 @@ namespace TNTVehicleSystem.Managers
                 }
             }
             return false;
+        }*/
+        public static bool IsExcludedVehicles(VehicleAsset asset)
+        {
+            string guid = asset.GUID.ToString();
+            if (Main.Plugin.Instance.Configuration.Instance.ExcludedVehicles.Contains(guid))
+            {
+                return true;
+            }
+
+            string id = asset.id.ToString();
+            if (Main.Plugin.Instance.Configuration.Instance.ExcludedVehicles.Contains(id))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public static void LogExcludedVehicles()
+        {
+            if (Main.Plugin.Instance.Configuration.Instance.ExcludedVehicles == null ||
+                Main.Plugin.Instance.Configuration.Instance.ExcludedVehicles.Count == 0)
+            {
+                Rocket.Core.Logging.Logger.Log("No excluded vehicles in configuration.");
+                return;
+            }
+
+            Rocket.Core.Logging.Logger.Log("Excluded vehicles list:");
+
+            foreach (var identifier in Main.Plugin.Instance.Configuration.Instance.ExcludedVehicles)
+            {
+                if (ushort.TryParse(identifier, out ushort id))
+                {
+                    VehicleAsset asset = Assets.find(EAssetType.VEHICLE, id) as VehicleAsset;
+                    if (asset != null)
+                    {
+                        Rocket.Core.Logging.Logger.Log($"- ID {id} ({asset.vehicleName})");
+                        continue;
+                    }
+                }
+
+                if (Guid.TryParse(identifier, out Guid guid))
+                {
+                    VehicleAsset asset = Assets.find(guid) as VehicleAsset;
+                    if (asset != null)
+                    {
+                        Rocket.Core.Logging.Logger.Log($"- GUID \"{guid}\" ({asset.vehicleName})");
+                        continue;
+                    }
+                }
+
+                Rocket.Core.Logging.Logger.Log($"- Unknown identifier: {identifier}");
+            }
         }
 
         private static bool IsRoadSurfaceTypes(RaycastHit hit)

@@ -35,7 +35,7 @@ namespace TNTVehicleSystem.Main
 
             Rocket.Core.Logging.Logger.Log($"TNTVehicleSystem load success | version {Assembly.GetExecutingAssembly().GetName().Version}]");
             Rocket.Core.Logging.Logger.Log($"vk: https://vk.com/tntplugins");
-
+            VehicleUtility.LogExcludedVehicles();
             if (Configuration.Instance.AutoLoadWorkShopMod)
             {
                 WorkshopDownloadConfig.getOrLoad().File_IDs.Add(3238333133);

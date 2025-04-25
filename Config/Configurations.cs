@@ -42,6 +42,7 @@ namespace TNTVehicleSystem.Config
             ExcludedVehicles = new List<string>()
             {
                 "e0f8b4b2-3249-483a-9cd5-c1402e2170fb",
+                "75",
             };
             Carjacking = true;
             CarjackingOwnerOnly = false;
